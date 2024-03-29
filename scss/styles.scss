@@ -1,10 +1,55 @@
-/* Variables */
+@import "colors";
+@import "nav";
 
+@mixin BorderlessCenter {
+    padding: 10px 10px;
+    border: none;
+}
+
+body {
+    font-family: $body-font;
+    background-color: $background-color;
+}
 
 /* Nest Main */
 main {
     width: 1350px;
     min-height:535px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    border: 20px $border-color solid;
+    background-color: $box-background-color;
+
+    section {
+        flex: 0 0 40%;
+
+        // Mixin or Extend for button
+        button {
+            margin-top: 40px;
+            @include BorderlessCenter;
+            background-color: $background-color;
+            color: $nav-color;
+        }
+
+        img {
+            max-width: 810px;
+        }
+    }
+
+    #intro-text {
+        span {
+            font-family: $header-font;
+            font-size: 32px;
+            font-weight: bolder;
+        }
+
+        h3 {
+            font-size: 38px;
+        }
+    }
 }
 
-// Mixin or Extend for button
+footer {
+    padding: 40px;
+}
